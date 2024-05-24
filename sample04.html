@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Page Layout</title>
+<style>
+* {padding:0; margin:0; }/** :hover 는 두가지 기능을 가지고있다. 마우스를 깆디 댈때와 치울때**/
+html,body {font:9pt 나눔고딕;}
+body {max-width: 900px; margin:auto; border: 3px dashed red;} /**margin:auto; 가운데 정렬. 외부 여백기능 구현 margin:auto; 은 단축 속성이다.(사방시계방향) margin-top--- 오토 했다가  탑 추가 가능 먼저 오토 돌아가고 탑 margin:40px auto 0; 가능. 0 안붙이면 아래도 40으로 바뀜 **/
+h1,h2 {font-size:1rem;}
+header:hover {background: aqua;}
+#main_aside {border: 2px dashed blue;}
+main h1 {display:none;}
+header {height:50pt; background:skyblue; transition : 1.5s;}
+section {height:200pt; background:linear-gradient(-30deg,tomato,gold)}
+section:hover {background: linear-gradient(30deg,pink,gold)}
+section:hover h2 {display: none;}  /** inear-gradient그라 deg 각도 조절 가능 괄호 열고 각도,색상,색상**/
+article {height:100pt; background:orange; transition : 0.5s;}
+article:hover {background: linear-gradient(40deg,rebeccapurple,greenyellow);}
+article:hover h2 {display: none;} /** article:hover 중에 h2가 포함 되어있다면 display: none 표시하지 말아라**/
+aside {height:50pt; background:gray; transition : 0.5s;}
+aside:hover {transform:rotate(-5deg);} 
+aside:hover {background: linear-gradient(to right,pink,blue);}
+aside:hover h2 {display: none;}
+footer {height:30pt; background:brown; transition : 1.5s;}
+footer:hover {transform:rotate(5deg);}/**transform:rotate 회전**/
+b {color: red; font-weight: normal; border: 1px dotted blue; padding: 20px; border-radius: 10px; background: rgba(255,255,0, 0.5); display: inline-block; transition : 0.5s;} /** 인라인레벨  display: inline-block; transition : 0.5s; 인라인 기능을 살리고 블록기능**/
+b:hover {transform:rotate(15deg);} 
+@media  (min-width:600pt) {
+ #main_aside {display:flex; height:300pt; }
+ main {flex-grow:3; }
+ aside { flex-grow:1; height:100%;}
+}
+</style>
+</head>
+<body>
+<header><h1>상단</h1></header>
+<div id="main_aside"><!--아이디를 부여하면 부모 자손 따지지 않고 디자인 가능-->
+ <main>
+ <h1>메인영역</h1>
+ <section><h2>일반<b>정보</b></h2></section>
+ <article><h2>기사<b>정보</b></h2></article>
+ </main>
+<aside><h2>부가<b>정보</b></h2></aside>
+</div>
+<footer><h1>하단</h1></footer>
+</body>
+</html>

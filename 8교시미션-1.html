@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8교시 미션-1</title>
+    <style>
+        #layout {
+           /* height:700px;*/
+           display: flex; 
+            min-height: 70vh;/*최소높이% ex 최소높이70%*/
+            max-width: 500px; /*900보다 넓어지지 않는다*/
+            max-width: 90vw;
+            background-color: rgb(102, 102, 151);
+            margin:auto;
+            /* margin-top:15vh;    */
+            border: 10px solid red;
+            justify-content: center; /*justify-content: center; 안에 포함 되어있는 모든 콘텐츠 가운데 정렬*/
+            align-items: flex-start;
+            padding-top: 20px;
+            }
+
+        #layout:hover {
+            background-color:rgb(187, 140, 106);        
+        }
+
+        #layout1 {border: 5px solid yellow; flex-basis: 250px;  box-sizing: border-box;}
+        main {border: 5px solid yellow; flex-basis: 250px;  box-sizing: border-box;}
+
+        /* #layout1 {border: 1px solid red;} */
+
+        form{
+            /* border: 1px solid rgb(133, 103, 103); */
+            max-width: 270px;}           
+        form [type="submit"] {margin:auto; display:block;}
+
+        footer {
+            border: 10px solid purple; 
+            height: 300px; background:
+             gold; padding: 50px;
+            width: 500px; 
+             box-sizing: border-box;}
+
+        /* 작은 기계장치 */
+        @media (max-width:500px) {
+            #layout {flex-direction: column;}    
+            #layout1,main {width: 100%;} 
+        }
+        /* {min-height:000px} */
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="layout1">  
+            <form action="#">
+                <h2>이름입력</h2>
+                <label for="aaa">First name:</label>
+                <input type="text" id="aaa" name="fname" placeholder="홍"><br>
+                <label for="bbb">Last name:</label>
+                <input type="text" id="lname" name="lname" placeholder="길동"><br><br>
+                <input type="submit" value="Submit">
+                </form>
+            </div>
+                <main><H2>이메일 수신동의</H2>
+             <form action="#">
+                <input type="radio" id="emil" name="e">
+                <label for="email"><label>예</label><br>
+                <input type="radio" id="no" name="e">
+                <label for="no"><label>아니요</label>
+                <input type="submit" value="확인">
+            </form>
+            <input type="checkbox" name="hobby" value="m">등산<br>
+            <input type="checkbox" name="hobby" value="f">낚시<br>
+            <input type="checkbox" name="hobby" value="v">영화<br><br>
+            <input type="color"><br>
+            <input type="date"><br>
+            <input type="email"><br>
+            <input type="file"><br>
+            <input type="hidden"><br>
+            <input type="image" src="images/start_button.jpg"><br>
+            <input type="number" min="23" max="35"><br>
+            <input type="range" min="0" max="100">
+            <input type="search">
+            <input type="tel"> 
+        </main>
+    </div>
+    <!-- <footer><h2>하단정보</h2></footer> -->
+</body>
+</html>

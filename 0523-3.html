@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그 연습하기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    
+    <style>
+        img {max-width: 100%;} /*부모 속성보다 커지지 않게 설정*/
+        body {margin: 0; background: rgb(251, 230, 255);
+         font-family: "Gowun Batang", serif;
+         font-weight: 400;
+         font-style: normal; }
+        #layout1 { max-width: 900px; margin: auto; }/*border(선): 3px(두께) solid(실선) red(색); */
+        header {background: linear-gradient(rgb(189, 203, 255),rgb(255, 203, 238)); padding: 20px; }
+        header h1 { margin: 0; text-align: center; color: aliceblue;}/* h 여백생김 margin: 0;로 여백삭제 */
+        nav {/*width: 300px;*/ height:300px; background: radial-gradient(circle,skyblue 10%,pink 30%,cornflowerblue 70%); margin: 20px auto; border-radius: 20px; transition : 3.5s;}
+        nav:hover {background: radial-gradient(circle,rgb(28, 71, 88) 10%,rgb(87, 58, 63) 30%,rgb(39, 55, 84) 70%); transform:rotate(50deg);}/*radial-gradient(circle, /colcr앞에 서클이 붙어 있으면 대지 비율에 상관 없이 정원형으로 디자인 된다*/
+        #layout2 { display: flex;}
+        #layout2 p {margin: 0;}
+        #layout2 p::first-letter {font-size: 2rem; border: 2px solid rgb(254, 188, 210); background: rgb(179, 233, 238); border-radius: 10px;
+        padding-right: 10px; padding-left: 10px;}    /* p::first-letter 
+        2em기준부모크기의두배 2rem body기준 폰트크기의2배 / 선택자::가상(가짜)선택자 : 하나만찍을떄(태그전체에 효과적용) 
+        :: 두번찍을때(태그일부분 효과적용/지정변경) 콜론두개찍는 가상선택자는 호버가 안된다(호버가 먼저오면 가능) ::before 라는 가상선택자는 콜론을 두개찍고 해당 요소의일부분(앞부분에) 텍스트가 입력 ::af*/
+        #layout2 p:hover::first-letter {background: rgb(246, 219, 246); }
+        main {background-color: skyblue; padding: 20px; flex: 2;}
+        main h2 {margin: 0; color: aliceblue;}
+        /* main p:hover {background: red;} */
+        aside {background-color: rgb(156, 228, 221); padding: 20px; flex: 1;}
+        aside h3 {margin: 0; color: aliceblue;} 
+        footer {background-color: cornflowerblue;  padding: 20px; text-align: center; transition : 3.5s;}
+        footer h3 {margin: 0; color: aliceblue;}
+        footer:hover {background: rgb(162, 195, 255);}
+
+
+
+        /* 폼태그 */
+        form { max-width: 210px; margin: auto; margin-right:0; display: flex; align-items: center; } /*부모요소가display: flex; 하면 자식요소중가장 높은것 기준으로 높이가 높아짐 / 특정자식에게만 설정하면 {flex:1;} 설정된 자식만 유독넓어지고, 다른 자식의 비율은 좁은채로 변경 없음 / 개념- 부모영역에서 남은 영역을 모두 할당 받는다
+        flex-grow 부풀다
+        flex-shrink 쪼그라들다 (수축)
+        flex-basis 넓이*/
+        /* form div {border: 2px solid rgb(93, 0, 255);}      */
+        form input {display: block;}
+        form div {flex: 1;}
+        form div input {width: 150px ;}
+        [type=text] {margin-bottom: 6px; background: rgb(198, 234, 255); border: 2px solid white; border-radius: 4px; }
+        [type=text]:hover {background: white; cursor: pointer;}
+        [type=password] {background: rgb(198, 234, 255); border: 2px solid white; border-radius: 4px;}
+        [type=password]:hover {background: white; cursor: pointer;}
+        [type=submit] { height: 50px; background:rgb(250, 214, 220); border: 2px solid white; border-radius: 5px;}
+        [type=submit]:hover {background: white; cursor: pointer;}
+
+        /* 반응형 부분  작은기계장치 0~550 px */
+        @media (max-width:550px){
+        #layout2 { flex-direction: column; } /* flex-direction: column; */
+        }     
+    </style>
+
+</head>
+<body>
+    <div id="layout1">
+        <header>
+            <h1>상단영역</h1>
+            <form action="#" method="post"> <!-- <form action="서버" method="post 비노출"> -->
+                <div>
+                    <input type="text" placeholder= "아이디를 입력하세요">
+                    <input type="password"  placeholder= "비밀번호를 입력하세요">
+                </div>
+                <input type="submit" value="확인"> <!--인풋타입 버튼은 서버와 교신 불가-->
+            </form>
+        </header>
+        <nav>
+            <!--빈사각형 -->
+        </nav>
+    <div id="layout2">
+            <main>
+              <h2>메인영역</h2>
+                <p>대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+                <p>국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다.</p>
+                <p>근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+            </main>
+            
+            <aside>
+                <h3>부가영역</h3>
+                    <p>대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다. 국회의원과 정부는 법률안을 제출할 수 있다.</p>
+                    <p>대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            </aside>
+        </div>
+        <footer>
+            <h3>하단정보</h3>
+            <img src="images/summer.jpg" alt="여름 바다">
+        </footer>
+    </div><!--div 어떠한 구역을 묶어놓는 목적-->
+</body>
+</html>
