@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8교시 미션-1</title>
     <style>
+        body {margin: 0;}
         #layout {
            /* height:700px;*/
            display: flex; 
             min-height: 70vh;/*최소높이% ex 최소높이70%*/
             max-width: 500px; /*900보다 넓어지지 않는다*/
-            max-width: 90vw;
+            max-width: 700px;
             background-color: rgb(102, 102, 151);
             margin:auto;
             /* margin-top:15vh;    */
-            border: 10px solid red;
+            /* border: 10px solid red; */
             justify-content: center; /*justify-content: center; 안에 포함 되어있는 모든 콘텐츠 가운데 정렬*/
             align-items: flex-start;
             padding-top: 20px;
+            padding-left: 20px;
             }
 
         #layout:hover {
             background-color:rgb(187, 140, 106);        
         }
 
-        #layout1 {border: 5px solid yellow; flex-basis: 250px;  box-sizing: border-box;}
-        main {border: 5px solid yellow; flex-basis: 250px;  box-sizing: border-box;}
+        #layout1 {/*border: 5px solid yellow;*/ flex-basis: 250px;  box-sizing: border-box;}
+        main {/*border: 5px solid yellow;*/ flex-basis: 250px;  box-sizing: border-box;}
 
         /* #layout1 {border: 1px solid red;} */
 
@@ -80,9 +82,9 @@
             <input type="hidden"><br>
             <input type="image" src="images/start_button.jpg"><br>
             <input type="number" min="23" max="35"><br>
-            <input type="range" min="0" max="100"><br>
-            <input type="search"><br>
-            <input type="tel"> <br>
+            <input type="range" min="0" max="100">
+            <input type="search">
+            <input type="tel"> 
         </main>
     </div>
     <!-- <footer><h2>하단정보</h2></footer> -->
