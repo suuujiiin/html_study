@@ -32,5 +32,5 @@ footer  {height: 100px; background: rgb(142, 184, 226);}
 
 /* 작은기계장치 */
 @media (max-width: 550px){ 
-    #popup {width: 100%;}
+       #popup {width: 100%; left: 0;}
 }
