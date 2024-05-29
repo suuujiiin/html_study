@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭이벤트리스너</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="0529-3.css">
+</head>
+<body>
+    <div id="layout"> 
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="mainMenu">메뉴1</a>
+                        <nav class="subMenu">
+                            <a href="#" >서브메뉴1-1</a>
+                            <a href="# "onclick="gg()">서브메뉴1-2</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">메뉴2</a>
+                        <nav class="subMenu">
+
+                            <a href="#">서브메뉴2-1</a>
+                            <a href="#">서브메뉴2-2</a>
+                            <a href="http://naver.com" target="_blank">서브메뉴2-3</a><!--target="_blank" 새창으로 열기-->
+                            <a href="#">서브메뉴2-4</a>
+                            <a href="#">서브메뉴2-5</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">메뉴3</a>
+                        <nav class="subMenu">
+                            <a href="#">서브메뉴3-1</a>
+                            <a href="#" id="qq">서브메뉴3-2</a>
+                            <a href="#">서브메뉴3-3</a>
+                            <a href="#">서브메뉴3-4</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">메뉴4</a>
+                        <nav class="subMenu">
+                            <a href="#" class="ww">서브메뉴4-1</a>
+                            <a href="#">서브메뉴4-2</a>
+                            <a href="#">서브메뉴4-3</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">메뉴5</a>
+                        <nav class="subMenu">
+                            <a href="#" class="zz">서브메뉴5-1</a>
+                            <a href="#" class="zz">서브메뉴5-2</a>
+                            <a href="#" class="zz">서브메뉴5-3</a>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <img src="images/summer.webp" alt="여름바다" >
+        </main>
+        <footer></footer>
+        <section id="popup">
+            <h3>공지사항</h3>
+            <button type="button">닫기</button>
+        </section>
+    </div>
+    <script src="0529-3.js"></script>
+</body>
+</html>

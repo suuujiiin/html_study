@@ -1,0 +1,31 @@
+*       {margin: 0; padding: 0;
+    font-family: "Orbit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(100, 156, 204);
+}
+
+img     {max-width: 100%;}
+#layout {max-width: 900px; margin: auto; border: 2px solid rgb(216, 216, 251);  position: relative; }/* max-width반응형 width고정*/
+/* 상단 */
+header  {height: 100px; border: 5px solid rgb(186, 222, 233); background: rgb(112, 171, 216); z-index: 1; position: relative; }/*z-index 포지셔닝 해야함*/
+/* 메뉴 */
+nav:not(.subMenu){margin-top: 35px;}
+nav > ul   {display: flex; list-style: none; justify-content: space-around; }/* space-between = 플렉스 기준 양쪽 정렬 여백은1:1 /evenly 양쪽여백있음 */
+nav li   { /*flex: 1; border: 1px solid red;*/ width: 100px; }
+nav a    {display: block; text-align: center; text-decoration: none; }
+/* 메인메뉴 */
+.mainMenu {text-align: center; color: rgb(255, 255, 255);  }
+nav li .subMenu {transition: 0.5s;}
+nav li:hover .subMenu {/*display:block;*/height: 120px; }
+/* 서브메뉴 */
+.subMenu {/*display: none;*/ background: rgba(255, 255, 255, 0.85); height: 0; overflow: hidden;}
+/* 메인 */
+main    {height: 70vh; border: 5px solid rgb(255, 255, 255);}
+main img{height: 100%;}
+/* 하단 */
+footer  {height: 100px; background: rgb(142, 184, 226);}
+
+/* 공지사항 */
+#popup  {background: rgba(255, 255, 255, 0.7 ); position: absolute; width: 500px; height: 400px; left:calc((100% / 2) - 250px); top: 210px; border-radius: 20px;  padding: 30px; box-sizing: border-box; text-align: center;}
+#popup button {padding: 3px 6px; position: absolute; bottom: 20px; right: 20px; border-radius: 7px; border: 2px solid rgb(189, 236, 255);}
