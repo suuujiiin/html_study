@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of 복습</title>
+</head>
+<body>
+    <h3>이곳에 경과를 표시한다.</h3>
+    <script>
+        // const x = [2,4,6,8]; //array 배열 (값변경 불가)
+        // let y = 0; //let키워드는 재할당 (사칙연산 등 가능, 값변경가능)
+
+        // for (let i of x){
+        //     y += i; // y++ 과 같다
+        //     document.querySelector('h3').innerHTML +='<br>' + y; // += 기존에 있던 앖이 유지 되면서 +
+        // } i는 중복 가능 안에 포함 되는 변수라
+
+        const xx = ['딸기', '바나나', '키위', '파인애플'];
+        let yy = '';
+        let qq = document.querySelector('h3');
+        for (let i of xx){
+                yy += i;
+                document.querySelector('h3').lnnerHTML += '<br>' + yy;
+        }
+    </script>
+</body>
+</html>

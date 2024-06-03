@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 태그요소 추가</title>
+  
+    <style>
+          @font-face {
+        font-family: 'MangoByeolbyeol';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoByeolbyeol.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        *{margin: 0; padding: 0; color: rgb(122, 109, 136);}
+        #layout{max-width: 1000px; margin: auto; border: 2px solid rgb(255, 229, 251); overflow:auto; }
+        header { background: rgb(255, 249, 254); display: flex;  align-items: flex-end; padding: 10px;}
+        nav>a { border: 2px solid rgb(239, 220, 255);  background:rgb(250, 237, 255); width: 70px; }
+        nav>a:hover {color: #a553ae;}
+        h1 {padding: 30px; margin: 0 10px; border: 2px solid rgb(239, 220, 255);  background: rgb(239, 220, 255);}
+        nav { background: rgb(242, 211, 255); flex: 1; text-align: center; align-items: center;
+             display: flex; justify-content:space-evenly; padding: 15px; margin: 0 70px 0 20px;}/*align-items: center; 팽창 됬던것 다시 수축*/
+        main {background: rgb(255, 255, 255); padding: 20px;}
+        section { flex: 2; padding: 200px 50px; text-align: 
+            center; box-sizing: border-box; margin-right: 20px; background-color: #fef8ff;}
+        main {display: flex; background: rgb(254, 234, 255);}
+        #right {background: rgb(244, 226, 255); flex: 1.5; }
+        footer {background: rgb(244, 226, 255); padding: 10px; padding-left: 150px;}
+        article {background: rgb(241, 218, 255); padding: 80px;}
+        aside {background: rgb(255, 206, 245); padding: 80px; margin-top: 20px;}
+        
+        p {background: rgb(255, 255, 255); margin-top: 10px; padding: 10px; max-width: 600px;}
+        address {background: rgb(255, 255, 255); padding: 10px; max-width: 600px;}
+
+        section ul{text-align: left; list-style-position: inside;}
+
+        audio {max-width: 100%;}
+        video{max-width: 100%; height: 400px;}
+        /* 0~550px디자인 적용 */
+         @media(max-width:550px){ 
+            header{flex-direction: column; align-items: flex-start;
+                display: flex;
+                align-items: center; /* 세로 중앙 정렬 추가 */
+                justify-content: center; /* 가로 중앙 정렬 추가 */}
+            nav {margin: 10px; width: 89%; }
+            main {flex-direction: column;}
+            section{margin-right: 0; margin-bottom: 20px;}
+            footer {padding-left: 10px;}
+            #right{text-align: center;}
+          }
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <h1>반응형웹</h1>
+            <nav>
+                <a href="#">메뉴1</a>
+                <a href="#">메뉴2</a>
+                <a href="#">메뉴3</a>
+                <a href="#">메뉴4</a>
+                <a href="#">메뉴5</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>콘텐츠 그룹01</h2>
+                <audio controls>
+                    <source src="media/radiant.mp3" type="audio/mperg">
+                </audio>
+                <video controls>
+                    <source src="media/movie.mp4" type="video/mp4">
+                </video>
+            </section>
+            <section>
+                <h2>콘텐츠 그룹02</h2>
+                <video controls>
+                    <source src="media/sea.mp4" type="video/mp4">
+                </video>
+            </section>
+            <div id="right">
+                <article><h2>주요기사</h2></article>
+                <aside><h3>광고</h3></aside>
+            </div>
+        </main>
+        <footer>
+            <address>경기도 부천시 오정구 삼정동 032)674-5685 coxpub@naver.com</address>
+            <p>COPYRIGHT ⓒAll rights reserved</p>
+        </footer>
+    </div>
+    <script>
+        const $h2 = document.querySelector('main section:first-child h2');
+        const $p = document.createElement('p')
+        
+        // alert($p)
+       // alert($h2); innerHTML은 이미지글자모두넣을수있다
+       $h2.innerHTML += "<br><b style='font-size:1.2rem; color:pink;' >태그가 추가됨</b>";
+       $h2.after($p);//다음요소 즉 형제 요소가 생긴다. before(앞) after(뒤) 생김
+       $p.innerHTML="형제요소가 추가됨"
+
+
+
+       //미션
+      const $h3 = document.querySelector('main section:last-of-type h2');
+      //다음요소 즉 형제 요소가 생긴다. before(앞) after(뒤) 생김
+      const $div = document.createElement('div');
+      $h3.before($div);
+      $div.innerHTML= "형제요소가 추가됨" 
+    
+      const $pp = document.querySelector('section p');
+      const $ul  =document.createElement('ul');
+      $ul.innerHTML = '<li>딸기</li><li>바나나</li><li>파인애플</li>';
+      $pp.after($ul);
+
+    </script>
+</body>
+</html>
